@@ -118,6 +118,11 @@ ul hr {
     transition: all 150ms ease-in-out;
 }
 
+@media (max-width: 500px) {
+    .logo {
+        display: none;
+    }
+}
 
 
 @media (max-width: 800px) {
@@ -126,3 +131,4 @@ ul hr {
         display: none;
     }
 }
+
