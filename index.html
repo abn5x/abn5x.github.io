@@ -10,22 +10,66 @@
 
 <body>
     <header>
-        <div class="logo-title">
+        <div class="logo-title" id="logo-title">
             <img src="/Resources/logo.svg" class="logo" alt="AL Logo">
             <div class="title">
                 <h1><strong>Diseñador Gráfico</strong></h1>
                 <h1>Adrián Lozovanu</h1>
             </div>
         </div>
-        <nav>
-            <hr>
-            <ul>
-                <li class="nav-button">Portafolio</li>
-                <li class="nav-button">Sobre mi</li>
-                <li class="nav-button">Contacto</li>
-            </ul>
-        </nav>
     </header>
+    <div id="nav-container-top"></div>
+    <nav id="nav-container">
+        <hr>
+        <ul>
+            <li class="nav-button nav-button--selected"><a href="#logo-title">Portafolio</a></li>
+            <li class="nav-button">Sobre mi</li>
+            <li class="nav-button">Contacto</li>
+        </ul>
+    </nav>
+    <main>
+        <div class="content-card">
+            <img class="content-card__img" src="" alt="">
+            <div class="content-card__text">
+                <h2>Título del Proyecto</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quo tempore. Totam temporibus
+                    velit doloremque molestias consequatur nihil ipsa aspernatur sunt harum officiis. Similique quia
+                    quod assumenda iste voluptate. Sapiente!</p>
+            </div>
+        </div>
+        <a href="https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link">
+            <div class="content-card">
+                <img class="content-card__img" src="" alt="">
+                <div class="content-card__text">
+                    <h2>Título del Proyecto</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quo tempore. Totam temporibus
+                        velit doloremque molestias consequatur nihil ipsa aspernatur sunt harum officiis. Similique quia
+                        quod assumenda iste voluptate. Sapiente!</p>
+                </div>
+            </div>
+        </a>
+        <div class="content-card">
+            <img class="content-card__img" src="" alt="">
+            <div class="content-card__text">
+                <h2>Título del Proyecto</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quo tempore. Totam temporibus
+                    velit doloremque molestias consequatur nihil ipsa aspernatur sunt harum officiis. Similique quia
+                    quod assumenda iste voluptate. Sapiente!</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        var observer = new IntersectionObserver(function (entries) {
+            // no intersection with screen
+            if (entries[0].intersectionRatio === 0)
+                document.querySelector("#nav-container").classList.add("nav-container-sticky");
+            // fully intersects with screen
+            else if (entries[0].intersectionRatio === 1)
+                document.querySelector("#nav-container").classList.remove("nav-container-sticky");
+        }, { threshold: [0, 1] });
+
+        observer.observe(document.querySelector("#nav-container-top"));
+    </script>
 </body>
 
 </html>
