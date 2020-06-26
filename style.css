@@ -145,14 +145,13 @@ ul {
                  0 0 10px rgba(255, 255, 255, 1);
 }
 
-.nav-button--selected + .nav-button::before,
+/* .nav-button--selected + .nav-button::before,
 .nav-button--selected::before{
     transform: rotate(45deg);
     height: 53px;
     opacity: 1;
-}
+} */
 
-/* .nav-button--selected + .nav-button::after  */
 
 /* --|| NAVIGATION BAR ||-- */
 
