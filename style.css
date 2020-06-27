@@ -203,6 +203,9 @@ main {
     height: 200px;
     margin-right: 40px;
 }
+.content-card__img[src=""] {
+    visibility: hidden;
+}
 .content-card__text h2 {
     margin-top: 0;
 }

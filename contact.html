@@ -24,26 +24,40 @@
         <hr>
         <ul>
             <li class="nav-button"><a href="index.html">Portafolio</a></li>
-            <li class="nav-button"><a href="">Sobre mi</a></li>
-            <li class="nav-button nav-button--selected"><a href="/contacto.html">Contacto</a></li>
+            <li class="nav-button"><a href="about.html">Sobre mi</a></li>
+            <li class="nav-button nav-button--selected"><a href="/contact.html">Contacto</a></li>
         </ul>
     </nav>
     <main>
         <div id="contact-form">
+            <div id="contact-info">
+                <h2>¿Tienes alguna consulta?</h2>
+                <p>
+                    Si quiere saber más sobre mis servicios y/o preguntarme sobre presupuestos, no dude en contactarme,
+                    especificando en detalle tu problema y subiendo los archivos que pienses que sean necesarios.
+                </p>
+                <p>
+                    Intentaré responderle en el menor tiempo posible.
+                </p>
+                </p>
+                Muchas gracias, atentamente Adrián.
+                </p>
+            </div>
             <form action="https://formspree.io/mlepwjkq" method="POST" enctype="multipart/form-data">
                 <label for="email">
                     Tu Correo electrónico:
-                    <input type="email" name="_replyto" required>
+                    <input id="email" type="email" name="_replyto" required>
                 </label>
-                <label for="Message">
+                <label for="message">
                     Tu mensaje:
-                    <textarea name="message" cols="30" rows="10" required></textarea>
+                    <textarea id="message" name="message" cols="30" rows="10" required></textarea>
                 </label>
-                <label for="File Upload">
-                    ¿Tienes algun archivo?:
-                    <input type="file" name="upload">
+                <label id="upload-button" for="upload">
+                    ¿Tienes algún archivo?
+                    <input type="file" id="upload" name="upload">
                 </label>
-                <input type="hidden" name="_next" value="https://help.formspree.io/hc/en-us/articles/360012378333--Thank-You-redirect" />
+                <input type="hidden" name="_next"
+                    value="https://help.formspree.io/hc/en-us/articles/360012378333--Thank-You-redirect" />
                 <button type="submit">Enviar Mensaje</button>
             </form>
         </div>
