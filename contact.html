@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Lozovanu Diseño</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-title" id="logo-title">
+            <img src="/Resources/logo.svg" class="logo" alt="AL Logo">
+            <div class="title">
+                <h1><strong>Diseñador Gráfico</strong></h1>
+                <h1>Adrián Lozovanu</h1>
+            </div>
+        </div>
+    </header>
+    <div id="nav-container-top"></div>
+    <nav id="nav-container">
+        <hr>
+        <ul>
+            <li class="nav-button"><a href="index.html">Portafolio</a></li>
+            <li class="nav-button"><a href="">Sobre mi</a></li>
+            <li class="nav-button nav-button--selected"><a href="/contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="contact-form">
+            <form action="https://formspree.io/mlepwjkq" method="POST" enctype="multipart/form-data">
+                <label for="email">
+                    Tu Correo electrónico:
+                    <input type="email" name="_replyto" required>
+                </label>
+                <label for="Message">
+                    Tu mensaje:
+                    <textarea name="message" cols="30" rows="10" required></textarea>
+                </label>
+                <label for="File Upload">
+                    ¿Tienes algun archivo?:
+                    <input type="file" name="upload">
+                </label>
+                <input type="hidden" name="_next" value="https://help.formspree.io/hc/en-us/articles/360012378333--Thank-You-redirect" />
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        var observer = new IntersectionObserver(function (entries) {
+            // no intersection with screen
+            if (entries[0].intersectionRatio === 0)
+                document.querySelector("#nav-container").classList.add("nav-container-sticky");
+            // fully intersects with screen
+            else if (entries[0].intersectionRatio === 1)
+                document.querySelector("#nav-container").classList.remove("nav-container-sticky");
+        }, { threshold: [0, 1] });
+
+        observer.observe(document.querySelector("#nav-container-top"));
+    </script>
+</body>
+
+</html>
