@@ -27,37 +27,17 @@
             <li class="nav-button"><a href="contact.html">Contacto</a></li>
         </ul>
     </nav>
-    <main>
-        <div class="content-card">
-            <img class="content-card__img" src="" alt="">
+    <main id="app">
+        <div class="content-card" v-for="(item, index) in items">
+            <img class="content-card__img" :src="item.imageUrl + index" alt="">
             <div class="content-card__text">
-                <h2>Título del Proyecto</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quo tempore. Totam temporibus
-                    velit doloremque molestias consequatur nihil ipsa aspernatur sunt harum officiis. Similique quia
-                    quod assumenda iste voluptate. Sapiente!</p>
-            </div>
-        </div>
-        <a href="https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link">
-            <div class="content-card">
-                <img class="content-card__img" src="" alt="">
-                <div class="content-card__text">
-                    <h2>Título del Proyecto</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quo tempore. Totam temporibus
-                        velit doloremque molestias consequatur nihil ipsa aspernatur sunt harum officiis. Similique quia
-                        quod assumenda iste voluptate. Sapiente!</p>
-                </div>
-            </div>
-        </a>
-        <div class="content-card">
-            <img class="content-card__img" src="" alt="">
-            <div class="content-card__text">
-                <h2>Título del Proyecto</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quo tempore. Totam temporibus
-                    velit doloremque molestias consequatur nihil ipsa aspernatur sunt harum officiis. Similique quia
-                    quod assumenda iste voluptate. Sapiente!</p>
+                <h2>{{item.title}}</h2>
+                <p>{{item.description}}</p>
             </div>
         </div>
     </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./main.js"></script>
     <script>
         var observer = new IntersectionObserver(function (entries) {
             // no intersection with screen

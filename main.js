@@ -1,12 +1,28 @@
-var observer = new IntersectionObserver(function (entries) {
-    // no intersection with screen
-    if (entries[0].intersectionRatio === 0)
-        document.querySelector("#nav-container").classList.add("nav-container-sticky");
-    // fully intersects with screen
-    else if (entries[0].intersectionRatio === 1)
-        document.querySelector("#nav-container").classList.remove("nav-container-sticky");
-}, { threshold: [0, 1] });
+const ItemList = {
+    data() {
+        return {
+            items: [
+                {
+                    title: "Proyecto 1",
+                    description: "Descripción 1",
+                    imageUrl: "https://picsum.photos/200?random=",
+                    url: ""
+                },
+                {
+                    title: "Proyecto 2",
+                    description: "Descripción 2",
+                    imageUrl: "https://picsum.photos/200?random=",
+                    url: ""
+                },
+                {
+                    title: "Proyecto 3",
+                    description: "Descripción 3",
+                    imageUrl: "https://picsum.photos/200?random=",
+                    url: ""
+                },
+            ]
+        }
+    }
+}
 
-observer.observe(document.querySelector("#nav-container-top"));
-
-document.querySelector("#nav-container").classList.add("nav-container-sticky");
+Vue.createApp(ItemList).mount('#app')
