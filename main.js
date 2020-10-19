@@ -11,6 +11,11 @@ var app = {
                 }
             ]
         }
+    },
+    methods: {
+        goTo(link){
+            document.open(link);
+        }
     }
 }
 Vue.createApp(app).mount('#app')

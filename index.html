@@ -29,7 +29,7 @@
             </ul>
         </nav>
         <main id="app__list">
-            <div class="content-card" v-for="(item, index) in items">
+            <div class="content-card" v-for="(item, index) in items" v-on:click="goTo(item.url)">
                 <img class="content-card__img" :src="item.imageUrl + index" alt="">
                 <div class="content-card__text">
                     <h2>{{item.title}}</h2>
