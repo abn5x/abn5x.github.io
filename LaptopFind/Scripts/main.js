@@ -5,6 +5,7 @@ const navBar = {
             selectedParam: [],
             animationDirection: 1,
             isActive: false,
+            compareList: [],
             mostSearched: [
                 {
                     name: "Dell XPS 15",
@@ -57,6 +58,16 @@ const navBar = {
         }
     },
     methods: {
+        addToCompare(name){
+            var index = this.compareList.indexOf(name);
+            console.log(index)
+            if(index >= 0){
+                this.compareList.splice(index,1)
+            }else{
+                this.compareList.push(name);
+            };
+            console.log(this.compareList)
+        },
         hideSearchPanel(){
             if(this.isActive){
                 this.playAnimation();
