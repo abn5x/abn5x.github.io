@@ -6,7 +6,7 @@ var app = {
                 {
                     title: "LaptopFind",
                     description: "LaptopFind is a semi-working prototype for searching Laptops, designed and developed from scratch with JS, HTML, CSS and VUE.",
-                    imageUrl: "https://picsum.photos/200?random=",
+                    imageUrl: "./Resources/LaptopFind.png",
                     url: "./LaptopFind/index.html"
                 }
             ]
@@ -14,7 +14,7 @@ var app = {
     },
     methods: {
         goTo(link){
-            document.open(link);
+            window.location = link;
         }
     }
 }

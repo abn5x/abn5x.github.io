@@ -11,8 +11,8 @@
 <body>
     <div id="app">
         <header id="header__logo">
-            <div class="logo-title" id="logo-title" v-if="isVisible">
-                <img src="/Resources/logo.svg" class="logo" alt="AL Logo">
+            <div class="logo-title" id="logo-title">
+                <img src="./Resources/logo.svg" class="logo" alt="AL Logo">
                 <div class="title">
                     <h1><strong>Diseñador Gráfico</strong></h1>
                     <h1>Adrián Lozovanu</h1>
@@ -30,7 +30,7 @@
         </nav>
         <main id="app__list">
             <div class="content-card" v-for="(item, index) in items" v-on:click="goTo(item.url)">
-                <img class="content-card__img" :src="item.imageUrl + index" alt="">
+                <img class="content-card__img" :src="item.imageUrl" alt="">
                 <div class="content-card__text">
                     <h2>{{item.title}}</h2>
                     <p>{{item.description}}</p>
