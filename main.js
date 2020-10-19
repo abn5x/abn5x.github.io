@@ -1,28 +1,16 @@
-const ItemList = {
+var app = {
     data() {
         return {
+            isVisible: false,
             items: [
                 {
-                    title: "Proyecto 1",
-                    description: "Descripción 1",
+                    title: "LaptopFind",
+                    description: "LaptopFind is a semi-working prototype for searching Laptops, designed and developed from scratch with JS, HTML, CSS and VUE.",
                     imageUrl: "https://picsum.photos/200?random=",
                     url: ""
-                },
-                {
-                    title: "Proyecto 2",
-                    description: "Descripción 2",
-                    imageUrl: "https://picsum.photos/200?random=",
-                    url: ""
-                },
-                {
-                    title: "Proyecto 3",
-                    description: "Descripción 3",
-                    imageUrl: "https://picsum.photos/200?random=",
-                    url: ""
-                },
+                }
             ]
         }
     }
 }
-
-Vue.createApp(ItemList).mount('#app')
+Vue.createApp(app).mount('#app')

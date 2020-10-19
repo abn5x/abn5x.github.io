@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaptopFind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="searchPanel">
+        <nav id="navBar">
+            <ul>
+                <li id="logo"><a href="index.html">LaptopFind</a></li>
+                <li>Trending laptops</li>
+                <li>Best in category</li>
+            </ul>
+            <div id="animation" v-on:click="playAnimation"></div>
+        </nav>
+        <div class="panel--vertical" :class="{ 'active--vertical': isActive, }">
+            <div class="searchBarPanel">
+                <div class="searchItems" :class="{'searchItems--active': isActive}">
+                    <input class="search" :class="{ searchActive: isActive}" type="text" name="Search" id="search"
+                        placeholder="Search for Model, CPU, RAM, etc." v-model="searchQuery">
+                    <div class="clear" :class="{'clear--active': searchQuery}" v-on:click="resetSearch()"></div>
+                    <span class="orderBy">Order by</span>
+                    <span class="chevron chevron--search"></span>
+                </div>
+                <div class="searchTags" v-if="isActive">
+                    <div class="tag" v-for="(tag, index) in filterTags" v-on:click="addTag(tag, index)"><span>+ </span>
+                        {{tag}}
+                    </div>
+                </div>
+            </div>
+            <div class="panel" :class="{ active: isActive, }">
+                <div class="panel__filter-menu" :class="{'active-item': false}">
+                    <div class="panel__filter" v-for="(filter, index) in filters">
+                        <h2 v-on:click="expandFilter(index)"
+                        :class="{'panel__filter--expanded': filter.isExpanded}">{{filter.title}}</h2>
+                        <div class="chevron" v-on:click="expandFilter(index)"
+                            :class="{'panel__filter--expanded': filter.isExpanded}"></div>
+                        <div v-if="filter.isExpanded" v-for="innerFilter in innerFilters[index]"
+                            class="expandedFilters">
+                            <input type="checkbox" :id="innerFilter.id" :name="innerFilter.id" :value="innerFilter.make"
+                                v-model="selectedParam">
+                            <div class="checkmark"></div>
+                            <label :for="innerFilter.id">{{innerFilter.make}}</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="hr" :class="{'hr-active': isActive}"></div>
+                <div v-if="!searchQuery" class="panel__content panel__content--vertical"
+                    :class="{'active-item': isActive}">
+                    <h2>Most Searched</h2>
+                    <div class="panel__content panel__content--sub" :class="{'active-item': isActive}">
+                        <div class="panel__item" v-for="item in mostSearched">
+                            <div class="imgContainer">
+                                <img :src="item.imageUrl" :alt="item.name">
+                            </div>
+                            <h3>{{item.name}}</h3>
+                            <div class="button button--buy">Buy</div>
+                            <div class="button button--details">Details</div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else class="panel__content panel__content--vertical" :class="{'active-item': isActive}">
+                    <h2>Results</h2>
+                    <div class="panel__content panel__content--sub" :class="{'active-item': isActive}">
+                        <div class="panel__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <h2 class="subtitle">Most searched.</h2>
+            <h1 class="name">Dell XPS 15</h1>
+            <button class="button button--details">More details</button>
+            <button class="button button--buy">Buy Now</button>
+        </div>
+        <img class="bgImg" src="./Resources/dell_xps.png" alt="Dell Laptop XPS 15" v-on:click="hideSearchPanel">
+    </div>
+    <script src="./Scripts/lottie.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./Scripts/main.js" type="text/javascript"></script>
+</body>
+
+</html>
