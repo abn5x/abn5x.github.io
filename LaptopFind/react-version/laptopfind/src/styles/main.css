@@ -1,0 +1,157 @@
+/**
+ * Reset
+ *
+ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+body,
+button,
+input,
+textarea,
+select {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+abbr,
+acronym {
+  border: 0;
+}
+
+@font-face {
+  font-family: "CeraBlack";
+  src: url(../assets/fonts/cerabasic-black-webfont.woff), url(../assets/fonts/cerabasic-black-webfont.woff2);
+}
+
+@font-face {
+  font-family: "CeraRegular";
+  src: url(../assets/fonts/cerabasic-regular-webfont.woff), url(../assets/fonts/cerabasic-regular-webfont.woff2);
+}
+
+@font-face {
+  font-family: "CeraBold";
+  src: url(../assets/fonts/cerabasic-bold-webfont.woff), url(../assets/fonts/cerabasic-bold-webfont.woff2);
+}
+
+body {
+  font-family: "CeraRegular";
+}
+
+h1 {
+  font-family: "CeraBlack";
+}
+
+#animation {
+  cursor: pointer;
+  height: 120%;
+  max-width: 120%;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: solid 1px black;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 50px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+nav ul .logo {
+  font-size: 3rem;
+  margin-left: unset;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+/*# sourceMappingURL=main.css.map */

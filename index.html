@@ -14,7 +14,7 @@
             <div class="logo-title" id="logo-title">
                 <img src="./Resources/logo.svg" class="logo" alt="AL Logo">
                 <div class="title">
-                    <h1><strong>Diseñador Gráfico</strong></h1>
+                    <h1><strong>Página Web de</strong></h1>
                     <h1>Adrián Lozovanu</h1>
                 </div>
             </div>
@@ -43,12 +43,12 @@
     <script>
         var observer = new IntersectionObserver(function (entries) {
             // no intersection with screen
-            if (entries[0].intersectionRatio === 0){
+            if (entries[0].intersectionRatio === 0) {
                 document.querySelector("#nav-container").classList.add("nav-container-sticky");
                 // app.isVisible = false;
                 // console.log(app.isVisible)
-            // fully intersects with screen
-            }else if (entries[0].intersectionRatio === 1){
+                // fully intersects with screen
+            } else if (entries[0].intersectionRatio === 1) {
                 document.querySelector("#nav-container").classList.remove("nav-container-sticky");
                 // app.isVisible = true;
                 // console.log(app.isVisible)

@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  color: white;
+  scroll-behavior: smooth;
+  font-family: Karu-Light;
+  font-size: $font-size;
+  scrollbar-width: thin;
+  scrollbar-color: white black;
+}
+h2 {
+  font-size: $font-size * 1.5;
+  font-family: $bold-font;
+  margin-bottom: 20px;
+}
+p {
+  margin-bottom: 20px;
+}

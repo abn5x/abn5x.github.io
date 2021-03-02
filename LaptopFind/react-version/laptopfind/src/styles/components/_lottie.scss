@@ -1,0 +1,24 @@
+#animation {
+  cursor: pointer;
+  height: 120%;
+  max-width: 120%;
+}
+
+nav {
+  display: flex;
+  border: solid 1px black;
+  justify-content: space-around;
+  height: 50px;
+  ul {
+    display: flex;
+    align-items: baseline;
+
+    .logo {
+      font-size: 3rem;
+      margin-left: unset;
+    }
+    li {
+      margin-left: 1rem;
+    }
+  }
+}

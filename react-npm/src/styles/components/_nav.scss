@@ -1,0 +1,87 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+ul {
+  margin: 0 20px 0 20px;
+  width: 100%;
+  max-width: 750px;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+/* --|| NAVIGATION BAR -- BUTTONS ANIMATION||-- */
+
+.nav-button {
+  text-align: center;
+  cursor: pointer;
+  flex-grow: 1;
+  list-style-type: none;
+  text-decoration: none;
+  position: relative;
+  transition: text-shadow 150ms ease-in-out;
+
+  &:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+      0 0 10px rgba(255, 255, 255, 1);
+  }
+
+  &::before,
+  &:last-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: -50%;
+    height: 0;
+    opacity: 0;
+    transform: rotate(0deg);
+    border-left: solid rgba(255, 255, 255, 0.5) 1px;
+    transition: transform 150ms ease-in-out, height 150ms ease-in-out 120ms,
+      opacity 200ms ease-in-out 140ms;
+  }
+  &:last-child:after {
+    left: initial;
+    right: -15px;
+  }
+  &:hover + &::before,
+  &:hover::before,
+  &:hover::after {
+    transform: rotate(45deg);
+    height: 53px;
+    opacity: 1;
+    transition: height 150ms ease-in-out, transform 150ms ease-in-out 120ms;
+  }
+
+  // @media (max-width: 800px) {
+  //   &::before,
+  //   &:last-child::after {
+  //     left: 20px;
+  //   }
+  //   &:hover + &::before,
+  //   &:hover::before,
+  //   &:hover::after {
+  //     left: 20px;
+  //   }
+  //   &:last-child:after {
+  //     right: 20px;
+  //   }
+  // }
+}
+
+.nav-button--selected {
+  font-family: Karu-Medium;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 10px rgba(255, 255, 255, 1);
+}

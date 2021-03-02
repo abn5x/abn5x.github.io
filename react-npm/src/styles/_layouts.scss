@@ -1,0 +1,27 @@
+#root {
+  display: grid;
+  grid-template-areas:
+    "h"
+    "m"
+    "f";
+  grid-template-rows: min-content 1fr min-content;
+  height: 100vh;
+}
+header {
+  grid-area: h;
+}
+main {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  grid-area: m;
+  margin: 0 auto;
+  max-width: 900px;
+  hr {
+    display: none;
+  }
+}
+
+footer {
+  grid-area: f;
+}
